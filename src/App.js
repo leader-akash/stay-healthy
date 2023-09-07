@@ -11,7 +11,6 @@ function App() {
   return (
     <div className="">
         <Header />
-
     {
       searchedText ?
       <div className='card-display'>
@@ -28,9 +27,7 @@ function App() {
         <img src='https://img.freepik.com/free-vector/girl-doing-yoga-cartoon-character_1308-118212.jpg' alt='img' />
         <p>Search to start your fitness journey !!</p>
         </div>
-    }
-
-        
+    }        
     </div>
   );
 }

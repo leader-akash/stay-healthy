@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { createContext, useContext, useEffect, useState } from 'react'
+import React, { createContext, useContext, useState } from 'react'
 
 const VideoContext = createContext(null);
 
@@ -14,27 +14,16 @@ const VideoProvider = ({ children }) => {
       const res = await axios.get(`https://asia-south1-socialboat-dev.cloudfunctions.net/assignmentVideos?q=${val}&numResults=8`);
       console.log('video', res?.data?.results);
       setVideoData(res?.data?.results)
-      // console.log('query', searchQuery)
     }
     catch (err) {
       console.log('video-err', err)
     }
   }
 
-
-
-
   const handleSearch = (e) => {
-    console.log('vvvvvv', e.target.value)
     setSearchedText(e.target.value);
     getResult(e.target.value)
-
-
   }
-
- 
-
-
 
   return (
     <VideoContext.Provider value={{ getResult, videoData, searchedText, handleSearch }}>

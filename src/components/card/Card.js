@@ -1,8 +1,7 @@
 import React from 'react';
 import './Card.css'
-import { useVideo } from '../../context/video-context';
 
-const Card = (details) => {
+const Card = (details, key) => {
 
   let heading = details?.details?.heading.split(':')[0];
   let title = '';
@@ -11,15 +10,13 @@ const Card = (details) => {
     heading = title
   }
 
-
   return (
     <div className='card-container'>
-          {/* <video className='video-container' controls src='' alt='video'/> */}
-          <video className='video-container' controls src={details?.details?.video} alt='video'/>
+          <video id={key} className='video-container' controls src={details?.details?.video} alt='video'/>
         <div className='card-info' >
             
            <p className='video-title'> {heading} </p>
-            <p className='video-tags'>{details?.details?.tags.map((el)=>(
+            <p className='video-tags' id={key}>{details?.details?.tags.map((el)=>(
               <p>#{el} </p>
             ))}</p>
         </div>
