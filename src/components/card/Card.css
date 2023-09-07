@@ -25,6 +25,8 @@
   text-align: center;
   margin: 5px 0;
   color: #5C2DBF;
+  word-wrap: break-word;
+  padding: 0 10px;
 }
 
 .video-tags {
